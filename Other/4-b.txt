@@ -1,0 +1,26 @@
+//Implementation of Lexical Analyzer using Lex tool
+%{
+int c=0;
+char symboltable[100][100];
+%}
+
+/*lex code to determine whether input is an identifier or not*/
+% { 
+#include <stdio.h> 
+    % 
+} 
+  
+    / rule section % % 
+    // regex for valid identifiers 
+    ^[a - z A - Z _][a - z A - Z 0 - 9 _] * { 
+		symboltable[c]=yytext;
+		c=c+1;
+    } 
+^[^a - z A - Z _]; 
+.; 
+% % 
+  
+    main() 
+{ 
+    yylex(); 
+} 

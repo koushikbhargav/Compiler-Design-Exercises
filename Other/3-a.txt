@@ -1,0 +1,15 @@
+%%
+[aeiouAEIOU]{printf("It is an vowel");
+}
+[a-zA-Z]{printf("It is a consonant");}
+%%
+
+main()
+{
+    yylex();
+}
+
+int yywrap()
+{
+    return 1;
+}

@@ -1,0 +1,21 @@
+%{
+    #include<stdio.h>
+    int c=0;
+    %}
+%%
+[aeiouAEIOU]{printf("It is an vowel");
+        c+=1;
+}
+[a-zA-Z]{printf("It is a consonant");}
+%%
+
+main()
+{
+    yylex();
+    printf("%d number of vowels",c);
+}
+
+int yywrap()
+{
+    return 1;
+}

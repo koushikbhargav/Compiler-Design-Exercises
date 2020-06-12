@@ -1,0 +1,20 @@
+%{
+Int ln=0;
+%}
+
+%%
+[\n]{ln++;}
+%%
+
+int main()
+{
+FILE *fp;
+char file[10];
+printf("Enter the filename: ");
+scanf("%s", file);
+yyin=fp;
+yylex();
+printf(“number of lines : %d”,ln);
+return 0;
+}
+
